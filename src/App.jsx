@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import ProgressIndicator from './components/ProgressIndicator';
 import VisaForm from './components/VisaForm';
+import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import { faqs, expeditedFaqs } from './data/visaData';
 
@@ -25,7 +26,8 @@ function App() {
           </div>
         </div>
       </main>
-      <Footer faqs={currentStep === 1 ? faqs : expeditedFaqs} />
+      <FAQSection faqs={currentStep === 1 ? faqs : expeditedFaqs} />
+      <Footer />
     </div>
   );
 }

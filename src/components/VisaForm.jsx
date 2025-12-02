@@ -91,88 +91,94 @@ const VisaForm = ({ currentStep, onStepChange }) => {
     <div className="visa-options-step">
       <h1 className="form-title">Online Vietnamese Visa Application</h1>
       
-      <div className="visa-cards-container">
-        <VisaOptionCard
-          type="Visa on arrival"
-          available={false}
-          features={[
-            'Tourist visas (1 month)',
-            'Emergency entry only',
-            'Air travel only (flights)',
-          ]}
-          disabled
-        />
-        <VisaOptionCard
-          type="E-visa"
-          available={true}
-          features={[
-            'Tourist visas (1 month / 3 month)',
-            'Entry types (Single / Multiple)',
-            'Air, overland, cruiseship entry',
-          ]}
-          onSelect={() => handleVisaSelect('evisa')}
-        />
-      </div>
+      <div className="step1-layout">
+        <div className="step1-main-content">
+          <div className="visa-cards-container">
+            <VisaOptionCard
+              type="Visa on arrival"
+              available={false}
+              features={[
+                'Tourist visas (1 month)',
+                'Emergency entry only',
+                'Air travel only (flights)',
+              ]}
+              disabled
+            />
+            <VisaOptionCard
+              type="E-visa"
+              available={true}
+              features={[
+                'Tourist visas (1 month / 3 month)',
+                'Entry types (Single / Multiple)',
+                'Air, overland, cruiseship entry',
+              ]}
+              onSelect={() => handleVisaSelect('evisa')}
+            />
+          </div>
 
-      <div className="note-box">
-        <p>
-          Currently, Emergency visa approval letter (visa on arrival) is issued for 30 days / single entry. 
-          The service fee DOES NOT include 25 USD for stamping fee at Vietnam airport.
-        </p>
-      </div>
+          <div className="note-box">
+            <p>
+              Currently, Emergency visa approval letter (visa on arrival) is issued for 30 days / single entry. 
+              The service fee DOES NOT include 25 USD for stamping fee at Vietnam airport.
+            </p>
+          </div>
 
-      <div className="comparison-table-section">
-        <h2 className="section-title">Visa On Arrival vs E-Visa</h2>
-        <p className="section-subtitle">Compare the main differences between visa on arrival and e-visa for Vietnam:</p>
-        
-        <table className="comparison-table">
-          <thead>
-            <tr>
-              <th>Major differences</th>
-              <th>Visa on arrival</th>
-              <th>E-Visa</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Single entry (1 month)</td>
-              <td>Yes</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>Multiple entry (1 month / 3 months)</td>
-              <td>Yes</td>
-              <td>Yes (Effective from August 15, 2023)</td>
-            </tr>
-            <tr>
-              <td>Standard processing</td>
-              <td>3-5 working days</td>
-              <td>5-7 working days</td>
-            </tr>
-            <tr>
-              <td>Stamping fee at Vietnam airport</td>
-              <td>US$25 for single entry</td>
-              <td>Not required (All included)</td>
-            </tr>
-            <tr>
-              <td>Photo requirement</td>
-              <td>2 photos at Vietnam airport</td>
-              <td>4*6 cm, no glasswear, recently taken</td>
-            </tr>
-            <tr>
-              <td>Scanned passport bio page</td>
-              <td>No</td>
-              <td>Yes</td>
-            </tr>
-          </tbody>
-        </table>
+          <div className="comparison-table-section">
+            <h2 className="section-title">Visa On Arrival vs E-Visa</h2>
+            <p className="section-subtitle">Compare the main differences between visa on arrival and e-visa for Vietnam:</p>
+            
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th>Major differences</th>
+                  <th>Visa on arrival</th>
+                  <th>E-Visa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Single entry (1 month)</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>Multiple entry (1 month / 3 months)</td>
+                  <td>Yes</td>
+                  <td>Yes (Effective from August 15, 2023)</td>
+                </tr>
+                <tr>
+                  <td>Standard processing</td>
+                  <td>3-5 working days</td>
+                  <td>5-7 working days</td>
+                </tr>
+                <tr>
+                  <td>Stamping fee at Vietnam airport</td>
+                  <td>US$25 for single entry</td>
+                  <td>Not required (All included)</td>
+                </tr>
+                <tr>
+                  <td>Photo requirement</td>
+                  <td>2 photos at Vietnam airport</td>
+                  <td>4*6 cm, no glasswear, recently taken</td>
+                </tr>
+                <tr>
+                  <td>Scanned passport bio page</td>
+                  <td>No</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
 
-        <div className="note-box">
-          <p>
-            Notes: As of 2025, visa on arrival service is only applicable to individuals entering Vietnam 
-            in emergency or urgent situations.
-          </p>
+            <div className="note-box">
+              <p>
+                Notes: As of 2025, visa on arrival service is only applicable to individuals entering Vietnam 
+                in emergency or urgent situations.
+              </p>
+            </div>
+          </div>
         </div>
+
+        <Sidebar />
       </div>
 
       <Modal
