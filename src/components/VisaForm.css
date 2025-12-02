@@ -14,6 +14,17 @@
   width: 100%;
 }
 
+.step1-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.step1-main-content {
+  flex: 1;
+}
+
 .visa-cards-container {
   display: flex;
   gap: 2rem;
@@ -320,6 +331,7 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .step1-layout,
   .two-column-layout,
   .application-form-step .two-column-layout {
     grid-template-columns: 1fr;
